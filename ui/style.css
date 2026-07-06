@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
+}
+
+#badge-container {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    transform: translate(-50%, 24px) scale(0.92);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+#badge-container.show {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+}
+
+#badge-container.hidden {
+    display: none;
+}
+
+/* --- Outer leather bifold --- */
+#wallet {
+    --accent-color: #caa14b;
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+    width: 520px;
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+        radial-gradient(ellipse at 28% 15%, rgba(255, 255, 255, 0.10), transparent 55%),
+        radial-gradient(ellipse at 80% 90%, rgba(0, 0, 0, 0.35), transparent 60%),
+        linear-gradient(160deg, #332a20, #15100b);
+    background-blend-mode: overlay, soft-light, multiply, normal;
+    background-size: 140px 140px, cover, cover, cover;
+    border-radius: 10px;
+    padding: 14px;
+    box-shadow:
+        0 14px 32px rgba(0, 0, 0, 0.6),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+        inset 0 1px 3px rgba(255, 255, 255, 0.06),
+        inset 0 -6px 16px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+/* center fold crease - makes the wallet read as a bifold */
+#wallet::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 34px;
+    transform: translateX(-50%);
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(0, 0, 0, 0.45) 40%,
+        rgba(0, 0, 0, 0.65) 50%,
+        rgba(255, 255, 255, 0.10) 54%,
+        transparent 75%
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* stitched edge look - gold thread */
+#wallet::after {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border: 1px dashed rgba(212, 175, 55, 0.65);
+    border-radius: 6px;
+    pointer-events: none;
+    box-shadow: 0 0 4px rgba(212, 175, 55, 0.25);
+    z-index: 2;
+}
+
+/* --- Left: ID card --- */
+#id-card {
+    width: 240px;
+    flex-shrink: 0;
+    background: linear-gradient(165deg, #ffffff7e, #c1c1c17e);
+    border-radius: 6px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.id-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+}
+
+.id-title {
+    color: #000000;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.id-subtitle {
+    color: rgb(23, 23, 23);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    margin-top: 1px;
+}
+
+.id-body {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.id-photo {
+    width: 62px;
+    height: 62px;
+    flex-shrink: 0;
+    background: #d9d9d9;
+    border-radius: 3px;
+    padding: 6px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25);
+}
+
+.id-photo svg {
+    width: 100%;
+    height: 100%;
+}
+
+.id-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding-top: 2px;
+    min-width: 0;
+}
+
+.id-name {
+    color: #000000;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.id-rank {
+    color: rgb(0, 0, 0);
+    font-size: 10.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.id-line {
+    color: rgb(0, 0, 0);
+    font-size: 10.5px;
+    font-weight: 600;
+}
+
+.id-line-label {
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
+
+.id-dept {
+    color: #000000;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    margin-top: 3px;
+}
+
+.id-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.id-signature {
+    font-family: 'Mrs Saint Delafield', cursive;
+    font-size: 24px;
+    line-height: 1;
+    color: #e8d28a;
+    letter-spacing: 0.5px;
+}
+
+.id-stamp {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--accent-color), transparent 75%);
+    opacity: 0.7;
+}
+
+/* --- Right: badge mounted in leather --- */
+#badge-panel {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: transparent;
+    border-radius: 6px;
+    padding: 16px;
+}
+
+#badge-image {
+    width: 100%;
+    max-width: 190px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.75)) drop-shadow(0 2px 3px rgba(0, 0, 0, 0.6));
+}

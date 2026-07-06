@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Badge Display</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="badge-container" class="hidden">
+        <div id="wallet">
+            <div id="id-card">
+                <div class="id-header">
+                    <span id="id-title" class="id-title">POLICE</span>
+                    <span class="id-subtitle">IDENTIFICATION</span>
+                </div>
+                <div class="id-body">
+                    <div class="id-photo">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="24" r="14" fill="#6b7280" />
+                            <path d="M8 60c0-14 10.7-22 24-22s24 8 24 22" fill="#6b7280" />
+                        </svg>
+                    </div>
+                    <div class="id-text">
+                        <div id="badge-officer" class="id-name"></div>
+                        <div id="badge-rank" class="id-rank"></div>
+                        <div class="id-line"><span class="id-line-label">Badge:</span> <span id="badge-callsign"></span></div>
+                        <div id="badge-department" class="id-dept"></div>
+                    </div>
+                </div>
+                <div class="id-footer">
+                    <span id="badge-signature" class="id-signature"></span>
+                    <div class="id-stamp"></div>
+                </div>
+            </div>
+            <div id="badge-panel">
+                <img id="badge-image" src="" alt="badge" />
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
