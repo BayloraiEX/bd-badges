@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -223,7 +225,7 @@ html, body {
 }
 
 .id-signature {
-    font-family: 'Segoe Script', 'Brush Script MT', cursive;
+    font-family: 'Mrs Saint Delafield', cursive;
     font-size: 24px;
     line-height: 1;
     color: #e8d28a;
