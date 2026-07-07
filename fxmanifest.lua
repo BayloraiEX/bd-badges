@@ -5,7 +5,7 @@ lua54 'yes'
 name 'bd-badges'
 author 'BayloraiDevelopment'
 description 'Show a police badge to nearby players (QBox/QBCore, ox_inventory/qb-inventory)'
-version '1.0.0'
+version '1.0.1'
 
 shared_script '@ox_lib/init.lua'
 shared_script 'config.lua'
