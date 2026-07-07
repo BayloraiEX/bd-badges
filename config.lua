@@ -13,6 +13,7 @@ Config.Inventory = 'auto'
 -- Command / keybind used to show the badge. You may also just use the item from your inventory
 Config.Command = 'showbadge'
 Config.Keybind = 'P' -- set to false to disable the default keybind
+Config.CloseKey = 'BACK' -- Backspace closes the badge popup; set to false to disable
 
 -- Require the player to be holding their department's badge item (ox_inventory) to use the command
 Config.RequireItem = true

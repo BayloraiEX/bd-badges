@@ -48,3 +48,15 @@ Each entry in `Config.Departments` is keyed by the job name as it appears in you
 ```
 
 Add, remove, or edit entries to match your server's jobs. Any job without an entry here simply can't use the command.
+
+### Items
+For `ox_inventory`, copy the entries from `install/ox_inventory_items.lua` into your `ox_inventory/data/items.lua` file.
+
+The included item names are:
+
+```lua
+police_badge
+ems_badge
+```
+
+These names already match the default `badgeItem` values in `config.lua` for police and ambulance/EMS.
